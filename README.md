@@ -1,6 +1,6 @@
-ANNOUNCING RECALBOX FOR THE RK3399 ROCKPRO64 - BETA RELEASE
+ANNOUNCING RECALBOX FOR THE RK3399 ROCKPRO64
 
-After many efforts with much teamwork, collaboration, and testing, we are very excited to provide the BETA release of RECALBOX for the ROCKPRO64 board!
+After many efforts with much teamwork, collaboration, and testing, we are very excited to provide the release of RECALBOX for the ROCKPRO64 board!
 -- The download is located under this repository's releases -- 
 https://github.com/mrfixit2001/recalbox_rockpro64/releases
 
@@ -9,8 +9,6 @@ Details on the ROCKPRO64 SoC can be found here: https://www.pine64.org/?page_id=
 For those of you unfamiliar with Recalbox: https://www.recalbox.com/ 
 "Recalbox offers a wide selection of consoles and game systems. From the very first arcade systems to the NES, the MEGADRIVE, 32-bit platforms (such as the Playstation) and even Nintendo64. With Kodi already included, Recalbox also serves as a Media Center. By connecting it to your home network, you will be able to stream videos from any compatible devices (NAS, PC, External HDD, etc.)."
 
-Please do keep in mind that this is a BETA release, which means you should still EXPECT some things not to work quite right. We have done a LOT of testing on our own to try and resolve as many issues as we can before this release, but now you get to help! (Lucky you!) So if/when you do find things that don't work right, please use the link in github to report the issue.
-
 When reporting issues:
 - Provide logs and/or screenshots of the issue so that we can see the error(s) you are seeing
 - Provide detailed steps for us to follow in order to reproduce the issue
@@ -18,31 +16,21 @@ When reporting issues:
 We STRONGLY recommend that you install a heatsink on the board
 CPU intensive tasks, such as 4K playback and demanding emulators, can create a substantial amount of heat. You can monitor your board's temperature and stats by enter it's IP address in a browser.
 
-Improvements Since the Alpha Release:
-Kernel Updates:
-- Updated to version 4.4.169
-- Various custom kernel fixes, mainline backports, stability and other enhancements
-- 4K Playback @ 60fps is now smooth and Audio/Video are synced
-
-Emulator Updates:
-- Updated versions of many emulators and cores
-- Buggy button re-mapping issue is resolved
-- PPSSPP now performs at 100% speed for most games
-- Customizable "max fps" setting in PPSSPP to fine tune your experience - set to 30fps to play GOW nice and smooth!
-- PSP video scenes now play perfectly
-- VirtualJaguar is now fixed and playable
-- NEOGEO Core Fixed
-- Bluetooth Controllers Reconnect After Reboot
-
-Rockpro Specific Updates:
-- WIFI and Bluetooth Module working (https://www.pine64.org/?product=rockpro64-2x2-mimo-dual-band-wifi-802-11acbluetooth-4-1-module)
-- RTL8812EU USB Wifi adapter working (https://www.pine64.org/?product=rock64-usb-3-0-dual-band-1200mbps-wifi-802-11abgnac-rtl8812au-adapter)
-- eMMC boot issues resolved
-- Headphone / Audio-Out (ES8316) Fixed
-- PCIe is enabled and connected storage devices have been confirmed to work correctly
-- Improved Gigabit Ethernet performance
-- Custom optimized resolutions for Mupen, PSP, and Reicast to hit 100% emulation speeds!
-- EmulationStation menu music always playing
+Latest Improvements:
+- Kernel updated to 4.4.171
+- Additional mainline back-ports and custom fixes
+- Additional drivers included in kernel
+- PCIe now works with Wifi and Bluetooth all at the same time
+- UART debug output enabled
+- Custom "Rockpro Fan" toggle in menu under system settings
+- Retroarch Updated to 1.7.6
+- Newer versions of some emulators
+- Pre-set optimized config for Mupen64
+- Resolution for Mupen64, Reicast, and Retroarch can now be changed from recalbox.conf file
+- Custom fix for widescreen's auto-stretching the picture (read the readme)
+- On-Screen-Keyboard issue Resolved
+- Custom patches to ES and Emulators to improve overall stability
+- Additional fixes for XBox One and 8BitDo controllers
 
 
 Some things that have been added to Recalbox that are Exclusive to my Pine64 releases:
@@ -70,6 +58,10 @@ A single ROM not working is not considered a "bug", it's often an incompatibilit
 
 If you are suddenly and unexpectedly thrown into KODI, then that means EmulationStation may have crashed. Please provide your /recalbox/es.log file so we can review.
 
+Important Note about Widescreens: The majority of users will be using widescreen monitors and TVs with 16:9 aspect ratios these days, and most of these will automatically stretch a 4:3 video to 16:9 to make it full screen. This distorts the graphics and makes everything look stretched out and askew. So, I have added custom patches and new configuration settings to Mupen64, Reicast, and Retroarch to correct this so that the emulators will still render at the right scale after being stretched. :) This is ON by default. If you do not have a widescreen monitor, or your monitor does not have this auto-stretch feature, then your games may not be centered or look too thin. In this case, simply make the following one-time changes to the configurations to turn off these customizations:
+- Retroarch: use the retroarch menu to change the default - Settings->Video->Aspect Ratio
+- Reicast: change the setting "rend.FixAspect" to 0 in /recalbox/share/system/configs/reicast/emu.cfg
+- Mupen64: each video plugin (core) has been given it's own setting, allowing you to customize each to your own needs, and GLES2N64 (n64 core) has it's own config file. The settings for these plugins are in /recalbox/share/system/configs/mupen64 in the files mupen64plus.cfg and gles2n64.conf. Just change the listed widths and left offsets to whatever your needs are.
 
 "Where's the source code?" The source is being cleaned up and organized in preparation to be made available for the recalbox team to maintain, instead of having it hosted in this repository. Merging it with the recalbox repo allows them to maintain and update it, which ensures that you will receive their updates as they are made available.
 
