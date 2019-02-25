@@ -1,8 +1,13 @@
 ANNOUNCING RECALBOX FOR THE RK3399 ROCKPRO64
 
 After many efforts with much teamwork, collaboration, and testing, we are very excited to provide the release of RECALBOX for the ROCKPRO64 board!
+
 -- The download is located under this repository's releases -- 
 https://github.com/mrfixit2001/recalbox_rockpro64/releases
+
+MrFixIt's custom kernel source is available here: https://github.com/mrfixit2001/rockchip-kernel
+
+Recalbox's source is available on their repo: https://gitlab.com/recalbox
 
 Details on the ROCKPRO64 SoC can be found here: https://www.pine64.org/?page_id=61454
 
