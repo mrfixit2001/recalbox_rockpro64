@@ -26,6 +26,7 @@ Latest Improvements:
 - Additional mainline back-ports and custom fixes
 - Additional drivers included in kernel
 - PCIe now works with Wifi and Bluetooth all at the same time
+- Additional PCIe driver fixes - Gen2 training now works
 - UART debug output enabled
 - Custom "Rockpro Fan" toggle in menu under system settings
 - Retroarch Updated to 1.7.6
@@ -36,7 +37,16 @@ Latest Improvements:
 - On-Screen-Keyboard issue Resolved
 - Custom patches to ES and Emulators to improve overall stability
 - Additional fixes for XBox One and 8BitDo controllers
-
+- Suspend and Resume support is now included - fully operational on Roshambo Case out of the box! (https://www.cloudmedia.com/?product=roshambo-retro-gaming-case)
+- AUFS drivers embedded into kernel
+- CDN-DP firmware loading fixed
+- Additional drivers included in kernel, including (but not limited to):
+     - LOTS of networking stuff, such as VLAN and IPv6
+     - Requirements for DOCKER containers
+     - Additional Intel PCIe drivers
+     - RAID support
+- Improved Networking Performance
+- IR-Receiver support added to device tree
 
 Some things that have been added to Recalbox that are Exclusive to my Pine64 releases:
 - Upgraded Kodi (and addons) from version 17 (Krypton) to version 18 (Leia) alpha release
