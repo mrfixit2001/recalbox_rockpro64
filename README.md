@@ -1,3 +1,8 @@
+-=[ **THIS REPO IS ARCHIVED - FIND THE LATEST RELEASE HERE: https://github.com/mrfixit2001/recalbox-rockchip** ]=-
+ 
+ 
+ 
+
 ANNOUNCING RECALBOX FOR THE RK3399 ROCKPRO64
 
 After many efforts with much teamwork, collaboration, and testing, we are very excited to provide the release of RECALBOX for the ROCKPRO64 board!
